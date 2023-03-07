@@ -1,7 +1,7 @@
 ﻿Description :
 =============
 I,  K.M. Arun Kumar alias Arunkumar Murugeswaran, just shared my works, which I worked as learning path and practiced Embedded C programming using PIC16F887 (Microchip's 8 bit microcontroller in PIC16 family) such as Developed for nursery usage for spraying of water based on soil moisture. There are two modes
-of operation auto mode and manual mode. In manual mode, nursery farms can set varies time for the different seeds and then based on the set time, water will be sprayed on the seeds effectively. In auto mode, when soil moisture sensor reading value is less than min threshold value (for soil dry condition), then turn on the water spray pump, and when soil moisture sensor reading value is more than max threshold value (for soil wet condition), then turn off the water spray pump.
+of operation auto mode and manual mode. In manual mode, nursery farms can a set time and then based on the set time, water will be sprayed on the seeds effectively. In auto mode, when soil moisture sensor reading value is less than min threshold value (for soil dry condition), then turn on the water spray pump, and when soil moisture sensor reading value is more than max threshold value (for soil wet condition), then turn off the water spray pump.
 
 CAUTION:
 ========
