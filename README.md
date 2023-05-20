@@ -1,16 +1,18 @@
 ﻿Description :
 =============
-I,  K.M. Arun Kumar alias Arunkumar Murugeswaran, just shared my works, which I worked as learning path and practiced Embedded C programming using PIC16F887 (Microchip's 8 bit microcontroller in PIC16 family) for interface of LED, Switch, 7 Segment LED, Keypad and LCD, Timer, ADC, Interrupt, UART, EEPROM, RTC, SPI, I2C, GSM and CCP. Other features are not implemented. 
+I, K.M. Arun Kumar alias Arunkumar Murugeswaran, just shared my works, which I worked as learning path and practiced Embedded C programming using PIC18F4550, such as password based door open. Also has feature to configured password for door open. 
 
-Projects, using PIC16F887, are included with Design, development, implemented, simulated and tested, by using a simulator are as follows :
-===========================================================================================================================================
- 1: smart milk vending machine. 
- 2: Simple Digital Single phase Electric Motor Controller controlled by Electric current.
- 3: Simple Digital Single phase Electric Motor Controller controlled by Electric Voltage.
- 4: Soil moisture based Water spraying system for nursery farms.
- 5: Traffic density congestion control based traffic signal controller.
- 6: Construction automation for mixing of cement, sand and water in the construction mixture equipment. 
- 7: In LCD, running text is displayed either to left or to right with specified number of gaps between consecutive same text display.
+Program Description
+===================
+Electronic door security system. At first, default correct password = "123789" is used and enter the password, which is 6 digits. character '#' acts as backspace and '*' acts as char to configure authication password. 
+1: when OPEN_SW is pressed, to allow access to keypad. password is entered.						  
+2:  After successuful authentication, Unipolar stepper motor is rotated clockwise from 0 to 90 degrees, then door is opened. 
+3:  When DOOR_CLOSE switch is pressed Unipolar stepper motor is rotated anticlockwise for 90 degrees to 0 degrees, then door is closed. 
+4:  wait for OPEN_SW to allow access to keypad. 
+5:  If first char enter in password is '*', which is invisible in LCD, then system goes into configure mode. Then at first password authication process begins and after successfully authication, set password is entered and then confirm password is entered. 
+6: If set password and confirm password matches, then new authentication password is set and writtern to internal EEPROM. If set password and confirm password does not match (no limit), correct password does not change and it goes to Step 1. 
+7: If door open authentication password is either wrong or timeout occurs, then numbr of retry is incremented by 1. If it exceeds MAX_RETRY, then microcontroller enters in sleep mode.
+8: Timer1 is used for time delay by interrupt.  
 
 CAUTION:
 ========
@@ -24,29 +26,25 @@ My Thanks and Tribute :
 ========================
 I thank to my family, Friends, Teachers, People behind the toolchains and references that I used, all those who directly or indirectly supported me and/or helped me and/or my family, Nature and God. My tribute to my family, Friends, Teachers, People behind the toolchains and references that I used, Nature, Jimmy Dog, God and all those, who directly or indirectly help and/or support me and/or my family.
 
-Toolchains that I used for PIC16F887 Application design and development are as follows :
+Toolchains that I used for PIC18F4550 Application design and development are as follows :
 =========================================================================================
-1: IDE and compiler for PIC16F887                                           - Microchip's MPLAB X IDE (v4.01) with MPLAB XC8 compiler(v1.45) or
-                                                                              Microchip's MPLAB 8.6 IDE with Hi-Tech C Compiler.  
-2: CAD and simulator for PIC16F887                                          - Proteus 8.0 Professional and/or Proteus 8.3 Professional SP2.
-3: PIC16F887 development board                                              - www.alselectro.com 
-4: Flash Programmer for PIC16F887                                           – PicKit3.
-5: LCD                                                                      - JHD162A.
-6: Desktop Computer Architecture and OS for PIC16F887 development           - Intel X64 & Windows 7 (32 bit).
-7: Code editor                                                              - Notepad++.
-8: Documentation                                                            - Microsoft Office 2007 (alternative LibreOffice) and Text Editor.
+1: IDE and compiler for PIC18F4550                                           - Microchip's MPLAB X IDE (v3.45) with MPLAB XC8 compiler(v1.45) 
+2: CAD and simulator for PIC18F4550                                          - Proteus 8.0 Professional, Proteus 8.3 Professional SP2, and/or Proteus 8.11 SPO.
+3: Desktop Computer Architecture and OS for PIC18F4550 development           - Intel X64 & Windows 10 (64 bit).
+4: Code editor                                                               - Notepad++.
+5: Documentation                                                             - Microsoft Office 2007 (alternative LibreOffice) and Text Editor.
 
 Some reference that I refered for PIC16F887  Application design and development, are as follows :
 ==================================================================================================
 1: Schaum's Outline of Programming with C, 2nd Edition - Book authored by Byron Gottfried.
 2: Understanding and Using C Pointers: Core Techniques for Memory Management - Book authored by Richard M. Reese. 
 3: Embedded C - Book authored by Michael J. Pont.
-4: PIC16F887 product datasheet.
-5: Hitachi HD44780U - LCD product data sheet.
+4: Hitachi HD44780U - LCD product data sheet.
+5: PIC18F4550 data sheet.
 
 Note :
 ======
-Kindly read in the source codes, if mentioned, about the Program Description or Purpose, Known Bugs, Caution and Notes and documentations. Some applications are also tested in a PIC16F887 development board.
+Kindly read in the source codes, if mentioned, about the Program Description or Purpose, Known Bugs, Caution and Notes and documentations. 
 
 My Repositories Web Link :
 ==========================
